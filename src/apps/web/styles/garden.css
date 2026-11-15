@@ -1,0 +1,70 @@
+/* Day/night toggle: a pixel sun or moon, no frame. */
+.mode {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font: 0.95rem/1 var(--pixel);
+  color: var(--ink);
+  background: none;
+  border: none;
+  padding: 0.5rem 0.4rem;
+  min-height: 2.75rem;
+  min-width: 2.75rem;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.mode:hover {
+  color: var(--accent);
+}
+
+.mode #mode-icon {
+  display: inline-flex;
+  color: var(--accent);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .mode:hover #mode-icon {
+    animation: bob 0.5s steps(2) infinite;
+  }
+}
+
+@keyframes bob {
+  50% { transform: translateY(-3px); }
+}
+
+/* Full-bleed pixel landscape under the hero. The canvas height is set from script. */
+.sky-band {
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.scene {
+  display: block;
+  width: 100%;
+  image-rendering: pixelated;
+}
+
+/* Seasonal pixels drift down the whole page, behind the text. */
+.weather {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  image-rendering: pixelated;
+}
+
+/* Phones: the toggle keeps only its icon, with the label for screen readers. */
+@media (max-width: 30rem) {
+  .mode #mode-label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+}

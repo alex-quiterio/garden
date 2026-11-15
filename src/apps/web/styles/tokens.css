@@ -1,0 +1,32 @@
+/* Defaults (summer, midday). The client overwrites the colour tokens from the sky model. */
+:root {
+  --bg: #f8f1dc;
+  --ink: #2a2a1c;
+  --muted: #6f6c55;
+  --accent: #8a6212;
+  --rule: #e4dcc3;
+  --leaf: #6f9a3a;
+  --hill-1: #e1d197;
+  --hill-2: #c9b86d;
+  --body: #f2b84b;
+  --leaf-opacity: 1;
+  --stars: 0;
+
+  --serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+  --mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+
+  --pixel: "Pixelify Sans", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+
+  /* Pixel grass and flowers, tiled as dividers. 24x5 art units drawn at 3px each. */
+  --grass: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 5' shape-rendering='crispEdges'%3E%3Cg fill='%236f9a3a'%3E%3Crect x='2' y='3' width='1' height='2'/%3E%3Crect x='3' y='2' width='1' height='3'/%3E%3Crect x='4' y='3' width='1' height='2'/%3E%3Crect x='10' y='3' width='1' height='2'/%3E%3Crect x='11' y='2' width='1' height='3'/%3E%3Crect x='12' y='3' width='1' height='2'/%3E%3Crect x='16' y='2' width='1' height='3'/%3E%3Crect x='20' y='3' width='1' height='2'/%3E%3Crect x='21' y='2' width='1' height='3'/%3E%3C/g%3E%3Cg fill='%23e58aa8'%3E%3Crect x='15' y='1' width='1' height='1'/%3E%3Crect x='17' y='1' width='1' height='1'/%3E%3Crect x='16' y='0' width='1' height='1'/%3E%3C/g%3E%3Crect x='16' y='1' width='1' height='1' fill='%23f2b84b'/%3E%3C/svg%3E");
+  --blossom: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 5 5' shape-rendering='crispEdges'%3E%3Cg fill='%23e58aa8'%3E%3Crect x='2' y='0' width='1' height='1'/%3E%3Crect x='0' y='2' width='1' height='1'/%3E%3Crect x='4' y='2' width='1' height='1'/%3E%3Crect x='2' y='4' width='1' height='1'/%3E%3C/g%3E%3Crect x='2' y='2' width='1' height='1' fill='%23f2b84b'/%3E%3C/svg%3E");
+
+  --gutter: 24px;
+  --measure: 66rem;
+  --radius: 16px;
+
+  /* Derived surfaces: a touch darker than paper by day, a touch lighter by night. */
+  --card: color-mix(in srgb, var(--ink) 4%, var(--bg));
+  --card-edge: color-mix(in srgb, var(--ink) 12%, var(--bg));
+  --shadow: color-mix(in srgb, var(--ink) 38%, transparent);
+}

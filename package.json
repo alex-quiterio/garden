@@ -1,0 +1,17 @@
+{
+  "name": "alex-quiterio-garden",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "web:build": "bun src/apps/web/build.ts",
+    "web:dev": "bun src/apps/web/dev.ts",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint src"
+  },
+  "devDependencies": {
+    "@types/bun": "^1.4.4",
+    "eslint": "^10.15.0",
+    "typescript": "6",
+    "typescript-eslint": "^8.72.2"
+  }
+}

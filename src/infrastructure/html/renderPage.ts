@@ -1,0 +1,88 @@
+import type { Entry } from "@domain/profile";
+import type { PageModel, PageSection } from "@application/composePage";
+import { PLANT_ORDER } from "@domain/pixel";
+import { plantSvg } from "@infrastructure/html/pixelSvg";
+
+const escapeHtml = (s: string) =>
+  s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+
+const isExternal = (url: string) => url.startsWith("http");
+
+function renderEntry(e: Entry, index: number, offset: number): string {
+  const title = e.url
+    ? `<a href="${escapeHtml(e.url)}"${isExternal(e.url) ? ' rel="noopener"' : ""}>${escapeHtml(e.title)}</a>`
+    : escapeHtml(e.title);
+  const meta = e.meta ? `<span class="meta">${escapeHtml(e.meta)}</span>` : "";
+  const kind = PLANT_ORDER[(index + offset) % PLANT_ORDER.length] ?? "sprout";
+  return `<li class="entry${e.url ? " linked" : ""}"><span class="plant">${plantSvg(kind)}</span><div class="entry-body"><h3>${title}</h3>${meta}<p>${escapeHtml(e.body)}</p></div></li>`;
+}
+
+function renderSection(s: PageSection): string {
+  const intro = s.intro ? `<p class="section-intro">${escapeHtml(s.intro)}</p>` : "";
+  const offset = (s.letter.charCodeAt(0) - 97) * 3;
+  return `<section id="${s.id}" class="section">
+  <h2><span class="letter" aria-hidden="true">${s.letter}.</span>${escapeHtml(s.title)}</h2>
+  ${intro}
+  <ul class="entries">${s.entries.map((e, i) => renderEntry(e, i, offset)).join("")}</ul>
+</section>`;
+}
+
+const LANDSCAPE = `<div class="sky-band">
+<canvas id="scene" class="scene" role="img" aria-label="A pixel-art hill with trees and a fox, under a sun or moon that follows the day or night setting"></canvas>
+</div>`;
+
+export function renderPage(page: PageModel, opts: { timeZone: string }): string {
+  const { profile } = page;
+  const menu = page.sections
+    .map((s) => `<a href="#${s.id}"><span class="letter">${s.letter}.</span> ${escapeHtml(s.title)}</a>`)
+    .join("");
+  const links = profile.links
+    .map((l) => `<a href="${escapeHtml(l.url)}"${isExternal(l.url) ? ' rel="noopener"' : ""}>${escapeHtml(l.label)}</a>`)
+    .join("");
+  const facts = profile.facts.map((f) => `<li>${escapeHtml(f)}</li>`).join("");
+
+  return `<!doctype html>
+<html lang="en" data-tz="${escapeHtml(opts.timeZone)}">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>${escapeHtml(page.documentTitle)}</title>
+<meta name="description" content="${escapeHtml(page.description)}" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ctext y='26' font-size='26'%3E%F0%9F%8C%BF%3C/text%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" />
+<link rel="stylesheet" href="styles/tokens.css" />
+<link rel="stylesheet" href="styles/base.css" />
+<link rel="stylesheet" href="styles/layout.css" />
+<link rel="stylesheet" href="styles/sections.css" />
+<link rel="stylesheet" href="styles/garden.css" />
+</head>
+<body>
+<canvas id="weather" class="weather" aria-hidden="true"></canvas>
+<header class="top">
+  <div class="bar">
+    <nav class="menu" aria-label="Sections">${menu}</nav>
+    <button type="button" id="mode" class="mode" aria-pressed="false" aria-label="Switch between day and night"><span id="mode-icon" aria-hidden="true"></span><span id="mode-label">day</span></button>
+  </div>
+</header>
+<main>
+  <section class="hero">
+    <h1>${escapeHtml(profile.greeting)}</h1>
+    ${profile.intro.map((p) => `<p class="lead">${escapeHtml(p)}</p>`).join("")}
+    <ul class="facts">${facts}</ul>
+  </section>
+</main>
+${LANDSCAPE}
+<main>
+  ${page.sections.map(renderSection).join("\n")}
+</main>
+<footer class="foot">
+  <nav class="links" aria-label="Elsewhere">${links}</nav>
+  <p class="note">${escapeHtml(profile.closingNote)}</p>
+</footer>
+<script type="module" src="main.js"></script>
+</body>
+</html>
+`;
+}
