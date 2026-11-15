@@ -12,6 +12,7 @@ export const alexProfile: Profile = {
   intro: [
     "I'm a staff engineer at Seenons, building AI factories: agents and skills wired into real workflows, with the guardrails, review loops and tests that make AI-produced software something you can ship.",
     "Underneath that I like to understand how things hold under load, so I write consensus protocols, compilers and Lisps from scratch. And alongside the engineering I keep wondering, and looking for active hope.",
+    "I'm happiest at the seam between ideas that sound research-grade and software people can rely on: small systems, explained well, tested properly, and kept alive by tending them.",
   ],
   facts: ["staff engineer @ seenons", "amsterdam", "building since 2011", "ai factories · distributed systems"],
   sections: [
@@ -112,31 +113,64 @@ export const alexProfile: Profile = {
       entries: [
         {
           title: "AI engineering and AI factories",
-          body: "I build with AI every day and design the factory around it, so that what comes out can be reviewed, tested and shipped.",
+          body: "I build with AI every day and design the factory around it: agents and skills wired into real workflows, with the guardrails, review loops and tests that make what comes out something you can ship.",
         },
         {
           title: "distributed systems from the metal up",
-          body: "Fork choice, randomness, stand-in validators so proof of stake never halts, replay protection, mempool limits, peer banning, headers-first sync.",
+          body: "Fork choice, randomness, stand-in validators so proof of stake never halts, replay protection, mempool limits, peer banning, headers-first sync. I would rather write the protocol once myself than trust that I understand it.",
         },
         {
           title: "languages and tooling",
-          body: "Compilers, interpreters and concurrency primitives, because they teach you what a program really is.",
+          body: "Compilers, interpreters and concurrency primitives, because they teach you what a program really is and what it costs.",
         },
         {
           title: "product that respects people",
-          body: "Local-first, privacy-preserving apps where the data stays on the user's device.",
+          body: "Local-first, privacy-preserving apps where the data stays on the user's device, and nothing is collected that the product does not need.",
         },
+        {
+          title: "security you can read",
+          body: "Tools like peekaboo look at a network read-only, score what they can measure, and say in plain words what to fix first.",
+        },
+        {
+          title: "creative computing",
+          body: "Pixel creatures from gaussian splats, flocks from three simple rules, songs as programs you can rewrite while they play. Play keeps the craft honest.",
+        },
+        {
+          title: "explaining as engineering",
+          body: "If a system cannot explain itself, I build the screen that does: a block explorer that narrates every block, a report that says what it checked and why.",
+        },
+      ],
+    },
+    {
+      id: "toolbox",
+      title: "toolbox",
+      intro: "Chosen for the problem, not the fashion.",
+      entries: [
+        { title: "languages", meta: "Rust · TypeScript · Ruby · Java · C++ · Lisp", body: "Systems work in Rust, product and tooling in TypeScript, and a decade of Ruby and Java behind both." },
+        { title: "data and messaging", meta: "PostgreSQL · Kafka", body: "For systems that have to keep their promises when things fail halfway." },
+        { title: "AI", meta: "Claude · agents · skills · MCP", body: "Models, agent loops and tool servers, wired in with reviews, tests and a way to roll back." },
+        { title: "shape of the code", body: "Domain-driven layers with lint rules that enforce the direction of dependencies, alias imports, and small scripts per app. This site is built that way." },
+        { title: "ways of delivering", body: "Local-first apps, static sites, command-line tools and small dashboards: whichever puts the least between a person and the thing they came for." },
+      ],
+    },
+    {
+      id: "principles",
+      title: "principles",
+      entries: [
+        { title: "make the invisible visible", body: "Show what the router can see, what the block contains, what the agent did. Trust follows sight." },
+        { title: "small enough to read", body: "A Lisp you can read in one sitting, a protocol you can hold in your head. What fits in a head can be fixed." },
+        { title: "data stays with the person", body: "Default to the device, ask before the network, and keep the append-only trail honest." },
+        { title: "guardrails before speed", body: "Speed is what you get after the review loops, the tests and the way back are in place." },
+        { title: "tend, don't just ship", body: "Software is a garden: it wants weeding, pruning and patience long after launch." },
       ],
     },
     {
       id: "background",
       title: "background",
       entries: [
-        { title: "now", meta: "Amsterdam", body: "Staff engineer at Seenons." },
-        {
-          title: "since 2011",
-          body: "Shipping software across Rust, TypeScript, Ruby, Java and C++, and building systems that hold under load.",
-        },
+        { title: "now", meta: "Amsterdam", body: "Staff engineer at Seenons, bringing AI into the way software gets designed, reviewed and shipped." },
+        { title: "since 2011", body: "Shipping software across Rust, TypeScript, Ruby, Java and C++, from product teams to protocol code, and building systems that hold under load." },
+        { title: "on the side", body: "A cryptocurrency node, a compiler, a Lisp, a router checker, a music player written as code, and a growing zoo of pixel creatures." },
       ],
     },
     {
