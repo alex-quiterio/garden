@@ -41,4 +41,4 @@ To change what the site says, edit `src/infrastructure/content/alexProfile.ts`.
 ## Notes
 
 - Motion respects `prefers-reduced-motion`: the scene is drawn once and the toggle switches instantly.
-- Headings use [Pixelify Sans](https://fonts.google.com/specimen/Pixelify+Sans) from Google Fonts, falling back to a monospace font.
+- Headings use [Pixelify Sans](https://fonts.google.com/specimen/Pixelify+Sans) (SIL Open Font License), bundled in `src/apps/web/styles/fonts/` so the site makes no third-party requests.
