@@ -12,7 +12,11 @@ bun run web:dev      # http://localhost:3000
 bun run web:build    # static files in dist/
 ```
 
-`dist/` is plain static HTML, CSS and one script, so any static host works.
+`dist/` is plain static HTML, CSS and one script, so any static host works. Asset paths are relative, so it also works under a sub-path like `/garden/`.
+
+## Deploy
+
+Pushing to `main` runs `.github/workflows/pages.yml`: install, typecheck, lint, build, then publish `dist/` to GitHub Pages at https://alex-quiterio.github.io/garden/.
 
 ## Checks
 
