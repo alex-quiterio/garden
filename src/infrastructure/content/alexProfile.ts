@@ -22,6 +22,11 @@ export const alexProfile: Profile = {
       intro: "Things I built to understand them. Mostly small, mostly open.",
       entries: [
         {
+          title: "baikonur",
+          meta: "TypeScript · Temporal · OpenCode · private",
+          body: "My personal AI factory. Label a GitHub issue and an agent crew triages it, writes a flight plan for you to edit, then builds it and lands a draft PR. Every step is a durable Temporal workflow, every agent runs without credentials, and every token spent goes in a ledger.",
+        },
+        {
           title: "loopfield",
           url: "https://alex-quiterio.github.io/loopfield/",
           meta: "JavaScript · live",
