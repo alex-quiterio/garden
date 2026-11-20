@@ -225,6 +225,7 @@ export const alexProfile: Profile = {
   links: [
     { label: "github", url: "https://github.com/alex-quiterio" },
     { label: "medium", url: "https://medium.com/@arielquixote" },
+    { label: "x", url: "https://x.com/ariel_quixote" },
     { label: "personal", url: "mailto:alexandre@pm.me" },
     { label: "work", url: "mailto:alexandre@seenons.com" },
   ],
