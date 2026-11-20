@@ -40,10 +40,34 @@ export const alexProfile: Profile = {
           body: "A personal situation room: pick a channel, get the gist of what is moving in the topics you care about.",
         },
         {
+          title: "gatecast",
+          url: "https://alex-quiterio.github.io/gatecast/",
+          meta: "TypeScript · live",
+          body: "Cast your Human Design chart in the browser: BodyGraph, gate wheel, comparisons and meanings. Nothing leaves your device.",
+        },
+        {
+          title: "wayfarer's atlas",
+          url: "https://alex-quiterio.github.io/wayfarers-atlas/",
+          meta: "JavaScript · live",
+          body: "An interactive map of a notebook.",
+        },
+        {
           title: "peekaboo",
           url: gh("peekaboo"),
           meta: "Rust",
           body: "A read-only peek at what your home router and ISP can see: it scores what it can measure and tells you the three most useful things to fix.",
+        },
+        {
+          title: "lock-guard",
+          url: gh("lock-guard"),
+          meta: "Swift",
+          body: "Tells you if someone touched your Mac while the screen was locked.",
+        },
+        {
+          title: "beeline",
+          url: gh("beeline"),
+          meta: "Rust",
+          body: "An autonomous drone simulator: A* planning, bee-inspired optic-flow navigation and PX4-style collision prevention, flying over a noir city.",
         },
         {
           title: "pixel splat zoo",
@@ -86,6 +110,12 @@ export const alexProfile: Profile = {
           url: gh("gratitude-trail"),
           meta: "Web",
           body: "A physical gratitude card with a QR code, growing an append-only timeline of everyone who holds it.",
+        },
+        {
+          title: "playgrounds",
+          url: gh("playgrounds"),
+          meta: "C · Go · Ruby · Prolog · Lisp",
+          body: "Small algorithm and language exercises, each with its own tests.",
         },
         {
           title: "smaller experiments",
