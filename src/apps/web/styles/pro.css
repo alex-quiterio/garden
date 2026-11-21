@@ -310,3 +310,95 @@
     transition: none;
   }
 }
+
+/* Shine, kept quiet: light catching an edge now and then, never a glow. */
+:root {
+  --glint: color-mix(in srgb, #ffffff 60%, var(--accent));
+  --gloss: color-mix(in srgb, #ffffff 22%, transparent);
+}
+
+/* A slow band of light crosses the greeting, then rests for most of the loop. */
+.hero h1 {
+  background-image:
+    linear-gradient(100deg, transparent 46%, var(--glint) 50%, transparent 54%),
+    linear-gradient(100deg, var(--ink) 45%, var(--accent));
+  background-size: 300% 100%, 100% 100%;
+  background-position: 150% 0, 0 0;
+  background-repeat: no-repeat;
+  animation: sheen 11s ease-in-out 1.5s infinite;
+}
+
+@keyframes sheen {
+  0% { background-position: 150% 0, 0 0; }
+  22%, 100% { background-position: -50% 0, 0 0; }
+}
+
+/* Numbers pick up a little light at the top. */
+.stat-value {
+  background: linear-gradient(180deg, color-mix(in srgb, #ffffff 28%, var(--accent)), var(--accent) 65%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Raised surfaces get a lit top edge and a faint gloss toward one corner. */
+.card,
+.stats,
+.status,
+.contact {
+  background-image: linear-gradient(135deg, var(--gloss), transparent 42%);
+}
+
+.card {
+  box-shadow: inset 0 2px 0 var(--gloss), 5px 5px 0 var(--card-edge);
+}
+
+.card.linked:hover,
+.card.linked:focus-within {
+  box-shadow: inset 0 2px 0 var(--gloss), 8px 8px 0 color-mix(in srgb, var(--accent) 55%, transparent);
+}
+
+/* A glint runs across a button or card once, when you reach for it. */
+.btn,
+.card {
+  overflow: hidden;
+}
+
+.btn {
+  position: relative;
+}
+
+.btn::before,
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 40%;
+  background: linear-gradient(100deg, transparent, var(--gloss) 45%, color-mix(in srgb, #ffffff 38%, transparent) 50%, var(--gloss) 55%, transparent);
+  transform: translateX(-160%);
+  pointer-events: none;
+}
+
+.btn:hover::before,
+.card.linked:hover::before,
+.card.linked:focus-within::before {
+  transform: translateX(360%);
+  transition: transform 0.7s ease-out;
+}
+
+.btn-primary {
+  background-image: linear-gradient(180deg, color-mix(in srgb, #ffffff 14%, transparent), transparent 55%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero h1 {
+    animation: none;
+  }
+
+  .btn::before,
+  .card::before {
+    display: none;
+  }
+}
