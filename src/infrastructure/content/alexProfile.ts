@@ -11,12 +11,13 @@ export const alexProfile: Profile = {
   greeting: "ola! i'm alex.",
   tagline: "staff engineer, wondering",
   headline:
-    "Staff engineer who turns research-grade ideas (AI agents, consensus, autonomy) into software teams can ship and trust.",
+    "Staff engineer building software that runs physical operations, from a 10M-user marketplace to a climate-tech platform, and AI agents that remove toil, not judgement.",
   place: "Amsterdam",
   timeZone: "Europe/Amsterdam",
   intro: [
     "I'm a staff engineer at Seenons, building AI factories: agents and skills wired into real workflows, with the guardrails, review loops and tests that make AI-produced software something you can ship.",
-    "For fifteen years I've shipped across Rust, TypeScript, Ruby, Java and C++, from product teams to protocol code. To understand how systems hold under load, I build them from scratch: consensus protocols, Byzantine quorums, compilers, and a drone autopilot simulator.",
+    "Before that I spent five years at Catawiki, helping break a marketplace serving 10M+ monthly users into team-owned services. I design event-driven systems that stay legible as they grow, and raise engineers who outgrow their roles.",
+    "To understand how systems hold under load, I build them from scratch: consensus protocols, Byzantine quorums, compilers, and a drone autopilot simulator.",
   ],
   availability: "open to staff+ roles · AI, autonomy, distributed systems",
   actions: {
@@ -27,12 +28,12 @@ export const alexProfile: Profile = {
     ],
   },
   stats: [
-    { value: "15+", label: "years shipping software" },
-    { value: "staff", label: "engineer, AI platform" },
-    { value: "20+", label: "systems built from scratch" },
-    { value: "6", label: "languages, Rust to Lisp" },
+    { value: "10M+", label: "monthly users on the Catawiki marketplace" },
+    { value: "500k+", label: "waste transactions a year on my event model" },
+    { value: "2,150+", label: "merged PRs, 2,800+ reviews at Seenons" },
+    { value: "1 → 10+", label: "engineers, a team I helped build" },
   ],
-  facts: ["amsterdam · CET", "rust · typescript · java", "ai agents · consensus · autonomy"],
+  facts: ["amsterdam · CET", "typescript · rust · python", "ai agents · consensus · autonomy"],
   sections: [
     {
       id: "impact",
@@ -43,13 +44,13 @@ export const alexProfile: Profile = {
           title: "AI that ships, not demos",
           meta: "agents · skills · MCP · evals",
           body: "I design the factory around the model: agents and skills wired into real workflows, with review loops, tests, cost ledgers and a way to roll back. The result is AI-produced software a team can put in production.",
-          points: ["agent pipelines from issue to reviewed PR", "guardrails and sandboxing by default", "every token and decision auditable"],
+          points: ["agent pipelines from issue to reviewed PR", "shared Claude Code skills for a whole team", "human review gates and a per-token cost ledger"],
         },
         {
           title: "systems that hold when things fail",
-          meta: "consensus · replication · Kafka · PostgreSQL",
-          body: "Fork choice, quorums, replay protection, headers-first sync, peer banning. I've written these protocols myself, so I know where they break and how to keep a system's promises when a node lies or a network splits.",
-          points: ["Byzantine fault tolerance", "proof of work and proof of stake", "event-driven data systems"],
+          meta: "event-driven · DDD · Temporal · PostgreSQL",
+          body: "I've broken a monolith into team-owned services and architected an event-driven platform that runs physical operations. On the side I write consensus protocols myself, so I know where they break and how to keep a system's promises when a node lies or a network splits.",
+          points: ["cross-system dependencies cut by 50% at Catawiki", "collection efficiency up 35% with multi-stream routing", "deploys from 2–4 hours to 15 minutes"],
         },
         {
           title: "autonomy and real-time control",
@@ -60,8 +61,8 @@ export const alexProfile: Profile = {
         {
           title: "technical leadership",
           meta: "staff engineer",
-          body: "I set direction across teams, write the design docs and decision logs, and raise the bar through review and pairing. I make the architecture enforce itself, with lint rules for layer boundaries, so the codebase stays readable as it grows.",
-          points: ["architecture and design reviews", "mentoring toward senior and staff", "turning research into roadmaps"],
+          body: "Technical owner of a core platform across 17 repositories. I design the interview loop and onboarding, run architecture workshops and pairing, and raise engineers who outgrow their roles.",
+          points: ["led a cross-functional team of 8", "mentored 5 engineers, 3 promoted to senior", "test coverage to 90%, production bugs down 45%"],
         },
       ],
     },
@@ -134,18 +135,31 @@ export const alexProfile: Profile = {
       entries: [
         {
           title: "Staff Engineer, Seenons",
-          meta: "now · Amsterdam",
-          body: "Bringing AI into how software gets designed, reviewed and shipped: agent workflows, internal skills and tooling, and the guardrails that make them safe to rely on.",
+          meta: "2022 – now · Amsterdam · climate tech",
+          body: "Technical owner of the core platform behind a circular economy for business waste, connecting businesses with specialised waste collectors.",
+          points: [
+            "event-driven order and collection model behind 500k+ waste transactions a year",
+            "deploys cut from 2–4 hours to 15 minutes with one monorepo and CI pipeline",
+            "audit-ready CSRD and impact reporting, reconciled against EU waste codes",
+            "partner APIs hardened with WAF and least-privilege IAM: incidents down 60%",
+          ],
         },
         {
-          title: "Software engineer, 2011 onward",
-          meta: "product teams to protocol code",
-          body: "Fifteen years shipping across Rust, TypeScript, Ruby, Java and C++, from product teams to protocol code, building systems that hold under load.",
+          title: "Senior Software Engineer, Seenons",
+          meta: "2021 – 2022 · Amsterdam",
+          body: "Joined early and helped build the engineering team from 1 to 10+ engineers.",
+          points: ["led the migration to NestJS and TypeScript: 30% less code, more features", "test coverage to 90%, production bugs down 45%"],
         },
         {
-          title: "Builder, always",
-          meta: "open source",
-          body: "A cryptocurrency node, a compiler, a Lisp, a drone simulator, a router auditor, a music player written as code, and a growing zoo of pixel creatures.",
+          title: "Senior Software Engineer, Catawiki",
+          meta: "2016 – 2021 · Amsterdam · marketplace",
+          body: "Online auction marketplace for special objects, with 10M+ monthly users across 50+ countries.",
+          points: [
+            "helped break the monolith into team-owned services for orders, shipping, fulfilment and feedback",
+            "cross-system dependencies cut by 50%",
+            "built the template every new service starts from: incidents down 40%",
+            "led a team of 8; mentored 5 engineers, 3 promoted to senior",
+          ],
         },
       ],
     },
@@ -154,9 +168,10 @@ export const alexProfile: Profile = {
       title: "toolbox",
       intro: "Chosen for the problem, not the fashion.",
       entries: [
-        { title: "languages", meta: "Rust · TypeScript · Ruby · Java · C++ · Lisp", body: "Systems work in Rust, product and tooling in TypeScript, and a decade of Ruby and Java behind both." },
-        { title: "data and messaging", meta: "PostgreSQL · Kafka · Temporal", body: "For systems that have to keep their promises when things fail halfway." },
-        { title: "AI", meta: "Claude · agents · skills · MCP", body: "Models, agent loops and tool servers, wired in with reviews, tests and a way to roll back." },
+        { title: "languages", meta: "TypeScript · Rust · Python · Ruby · SQL · C++ · Java", body: "Product and platform in TypeScript, systems work in Rust, services in Python and Ruby." },
+        { title: "platforms", meta: "NestJS · React · Rails · FastAPI · PostgreSQL · MongoDB", body: "The frameworks and stores behind a 10M-user marketplace and a climate-tech platform." },
+        { title: "cloud", meta: "AWS · GCP · Kubernetes · Pulumi", body: "Infrastructure as code, least-privilege IAM and observability from the first deploy." },
+        { title: "AI", meta: "Claude Code · agents · skills · MCP", body: "Agentic workflows with human review gates, team-wide skills and plugins, and cost-accounted LLM tooling." },
         { title: "architecture", meta: "DDD · layered · local-first", body: "Domain-driven layers with lint rules that enforce the direction of dependencies. This site is built that way." },
       ],
     },
@@ -268,6 +283,8 @@ export const alexProfile: Profile = {
       title: "beyond work",
       inMenu: false,
       entries: [
+        { title: "volunteer engineer, FoodCoop Amsterdam", meta: "2018 – 2021", body: "Led two volunteers building the coop's Rails system: inventory for 3,000+ products and role-based access for 200+ members." },
+        { title: "maths tutor, Academia do Futuro", meta: "2014 – 2016 · Lisbon", body: "Free tutoring for children at risk of leaving school." },
         { title: "emergence", body: "How simple local rules become flocks, networks and communities." },
         { title: "music as code", body: "Songs as short programs that loop, build and fall away." },
         { title: "making with hands", body: "Learning stone, wood and soil as slowly as the screen work is fast, with a pull toward rural Portugal." },
@@ -282,6 +299,7 @@ export const alexProfile: Profile = {
   },
   links: [
     { label: "github", url: "https://github.com/alex-quiterio" },
+    { label: "substack", url: "https://substack.com/@arielquixote" },
     { label: "medium", url: "https://medium.com/@arielquixote" },
     { label: "x", url: "https://x.com/ariel_quixote" },
     { label: "email", url: `mailto:${personalEmail}` },
