@@ -21,6 +21,7 @@ export const alexProfile: Profile = {
     primary: { label: "get in touch", url: `mailto:${personalEmail}?subject=Hello%20Alex` },
     secondary: [
       { label: "selected work", url: "#work" },
+      { label: "linkedin", url: "https://www.linkedin.com/in/alexandrequiterio/" },
       { label: "github", url: "https://github.com/alex-quiterio" },
     ],
   },
@@ -295,6 +296,7 @@ export const alexProfile: Profile = {
     action: { label: personalEmail, url: `mailto:${personalEmail}?subject=Hello%20Alex` },
   },
   links: [
+    { label: "linkedin", url: "https://www.linkedin.com/in/alexandrequiterio/" },
     { label: "github", url: "https://github.com/alex-quiterio" },
     { label: "substack", url: "https://substack.com/@arielquixote" },
     { label: "medium", url: "https://medium.com/@arielquixote" },
