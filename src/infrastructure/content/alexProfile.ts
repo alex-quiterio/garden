@@ -14,7 +14,7 @@ export const alexProfile: Profile = {
   place: "Amsterdam",
   timeZone: "Europe/Amsterdam",
   intro: [
-    "At Seenons I own the core platform behind a circular economy for business waste, and build the agent pipelines that take a GitHub issue to a reviewed pull request. Before that I spent five years at Catawiki, helping break a marketplace with 10M+ monthly users into team-owned services.",
+    "At Seenons I own the core platform behind a circular economy for business waste, and build the agent pipelines that take a GitHub issue to a reviewed pull request. Before that I spent five years at Catawiki, helping break a marketplace with millions of monthly users into team-owned services.",
   ],
   availability: "open to staff+ roles · distributed systems, AI, autonomy",
   actions: {
@@ -26,10 +26,10 @@ export const alexProfile: Profile = {
     ],
   },
   stats: [
-    { value: "10M+", label: "monthly users on a marketplace I helped split into services" },
-    { value: "15 min", label: "deploys, down from 2–4 hours" },
-    { value: "35%", label: "more efficient collections through multi-stream routing" },
-    { value: "1 → 10+", label: "engineers, a team I helped build" },
+    { value: "owner", label: "of the core platform the company runs on" },
+    { value: "millions", label: "of monthly users on a marketplace I helped split into services" },
+    { value: "minutes", label: "to ship what used to take hours" },
+    { value: "early", label: "engineer who built the team that followed" },
   ],
   facts: ["amsterdam · CET", "typescript · rust · python", "distributed systems · ai engineering"],
   sections: [
@@ -48,7 +48,7 @@ export const alexProfile: Profile = {
           title: "systems that hold when things fail",
           meta: "event-driven · DDD · Temporal · PostgreSQL",
           body: "I've broken a monolith into team-owned services and architected an event-driven platform that runs physical operations. On the side I write consensus protocols myself, so I know where they break and how to keep a system's promises when a node lies or a network splits.",
-          points: ["cross-system dependencies cut by 50% at Catawiki", "collection efficiency up 35% with multi-stream routing", "deploys from 2–4 hours to 15 minutes"],
+          points: ["a marketplace monolith split into team-owned services", "the order and collection model a logistics network runs on", "deploys that take minutes, not hours"],
         },
         {
           title: "a pull toward autonomy",
@@ -59,8 +59,8 @@ export const alexProfile: Profile = {
         {
           title: "technical leadership",
           meta: "staff engineer",
-          body: "Technical owner of a core platform across 17 repositories. I design the interview loop and onboarding, run architecture workshops and pairing, and raise engineers who outgrow their roles.",
-          points: ["led a cross-functional team of 8", "mentored 5 engineers, 3 promoted to senior", "test coverage to 90%, production bugs down 45%"],
+          body: "Technical owner of the core platform, and a reviewer on much of what ships to it. I design the interview loop and onboarding, run architecture workshops and pairing, and raise engineers who outgrow their roles.",
+          points: ["led a cross-functional marketplace team", "mentored engineers into senior roles", "designed the hiring loop and onboarding"],
         },
       ],
     },
@@ -136,27 +136,27 @@ export const alexProfile: Profile = {
           meta: "2022 – now · Amsterdam · climate tech",
           body: "Technical owner of the core platform behind a circular economy for business waste, connecting businesses with specialised waste collectors.",
           points: [
-            "event-driven order and collection model behind 500k+ waste transactions a year",
-            "deploys cut from 2–4 hours to 15 minutes with one monorepo and CI pipeline",
+            "designed the event-driven order and collection model every transaction flows through",
+            "one monorepo and one CI pipeline, so deploys take minutes, not hours",
             "audit-ready CSRD and impact reporting, reconciled against EU waste codes",
-            "partner APIs hardened with WAF and least-privilege IAM: incidents down 60%",
+            "hardened partner APIs with WAF rules and least-privilege IAM",
           ],
         },
         {
           title: "Senior Software Engineer, Seenons",
           meta: "2021 – 2022 · Amsterdam",
-          body: "Joined early and helped build the engineering team from 1 to 10+ engineers.",
-          points: ["led the migration to NestJS and TypeScript: 30% less code, more features", "test coverage to 90%, production bugs down 45%"],
+          body: "Joined early and built the engineering team from its first hires.",
+          points: ["led the migration to NestJS and TypeScript: a smaller codebase that does more", "made tests a gate in CI, and production bugs dropped with it"],
         },
         {
           title: "Senior Software Engineer, Catawiki",
           meta: "2016 – 2021 · Amsterdam · marketplace",
-          body: "Online auction marketplace for special objects, with 10M+ monthly users across 50+ countries.",
+          body: "Online auction marketplace for special objects, with millions of monthly users across dozens of countries.",
           points: [
             "helped break the monolith into team-owned services for orders, shipping, fulfilment and feedback",
-            "cross-system dependencies cut by 50%",
-            "built the template every new service starts from: incidents down 40%",
-            "led a team of 8; mentored 5 engineers, 3 promoted to senior",
+            "built the template every new service starts from, with CI and coverage gates by default",
+            "led a cross-functional team on core marketplace features",
+            "mentored engineers who went on to senior roles",
           ],
         },
       ],
@@ -167,7 +167,7 @@ export const alexProfile: Profile = {
       intro: "Chosen for the problem, not the fashion.",
       entries: [
         { title: "languages", meta: "TypeScript · Rust · Python · Ruby · SQL · C++ · Java", body: "Product and platform in TypeScript, systems work in Rust, services in Python and Ruby." },
-        { title: "platforms", meta: "NestJS · React · Rails · FastAPI · PostgreSQL · MongoDB", body: "The frameworks and stores behind a 10M-user marketplace and a climate-tech platform." },
+        { title: "platforms", meta: "NestJS · React · Rails · FastAPI · PostgreSQL · MongoDB", body: "The frameworks and stores behind a marketplace with millions of users and a climate-tech platform." },
         { title: "cloud", meta: "AWS · GCP · Kubernetes · Pulumi", body: "Infrastructure as code, least-privilege IAM and observability from the first deploy." },
         { title: "AI", meta: "Claude Code · agents · skills · MCP", body: "Agentic workflows with human review gates, team-wide skills and plugins, and cost-accounted LLM tooling." },
         { title: "architecture", meta: "DDD · layered · local-first", body: "Domain-driven layers with lint rules that enforce the direction of dependencies. This site is built that way." },
@@ -281,7 +281,7 @@ export const alexProfile: Profile = {
       title: "beyond work",
       inMenu: false,
       entries: [
-        { title: "volunteer engineer, FoodCoop Amsterdam", meta: "2018 – 2021", body: "Led two volunteers building the coop's Rails system: inventory for 3,000+ products and role-based access for 200+ members." },
+        { title: "volunteer engineer, FoodCoop Amsterdam", meta: "2018 – 2021", body: "Led two volunteers building the coop's Rails system: inventory for thousands of products and role-based access for hundreds of members." },
         { title: "maths tutor, Academia do Futuro", meta: "2014 – 2016 · Lisbon", body: "Free tutoring for children at risk of leaving school." },
         { title: "emergence", body: "How simple local rules become flocks, networks and communities." },
         { title: "music as code", body: "Songs as short programs that loop, build and fall away." },
