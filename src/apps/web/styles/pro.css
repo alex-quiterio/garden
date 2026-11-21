@@ -1,0 +1,312 @@
+/* The hiring layer: status, calls to action, proof points, case-study cards and the contact plot.
+   Everything uses hard pixel edges and stepped motion so it sits inside the garden. */
+
+.status {
+  display: inline-flex;
+  max-width: 100%;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 1.5rem;
+  padding: 0.45rem 0.9rem 0.45rem 0.75rem;
+  font: 0.9rem/1.2 var(--pixel);
+  color: var(--ink);
+  background: var(--card);
+  border: 2px solid var(--card-edge);
+  box-shadow: 3px 3px 0 var(--card-edge);
+}
+
+.status-dot {
+  width: 9px;
+  height: 9px;
+  flex: none;
+  background: var(--leaf);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--leaf) 30%, transparent);
+  animation: pulse 1.6s steps(2) infinite;
+}
+
+@keyframes pulse {
+  50% { box-shadow: 0 0 0 5px color-mix(in srgb, var(--leaf) 12%, transparent); }
+}
+
+.headline {
+  font: 500 clamp(1.25rem, 2.6vw, 1.6rem) / 1.35 var(--pixel);
+  max-width: 44rem;
+  margin-bottom: 1.5rem;
+  color: var(--ink);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  margin-top: 2rem;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.9rem;
+  padding: 0.6rem 1.3rem;
+  font: 600 1rem/1 var(--pixel);
+  text-decoration: none;
+  border: 2px solid var(--ink);
+  box-shadow: 4px 4px 0 var(--ink);
+  transition: transform 0.12s steps(2), box-shadow 0.12s steps(2);
+}
+
+.btn:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 var(--ink);
+}
+
+.btn:active {
+  transform: translate(3px, 3px);
+  box-shadow: 1px 1px 0 var(--ink);
+}
+
+.btn-primary {
+  color: var(--bg);
+  background: var(--accent);
+}
+
+.btn-primary:hover {
+  color: var(--bg);
+}
+
+.btn-ghost {
+  color: var(--ink);
+  background: var(--bg);
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin-top: 2.75rem;
+  border: 2px solid var(--card-edge);
+  background: var(--card);
+}
+
+.stats li {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  padding: 1.1rem 1.25rem;
+}
+
+.stats li + li {
+  border-left: 2px dashed var(--card-edge);
+}
+
+.stat-value {
+  font: 600 clamp(1.6rem, 3.5vw, 2.2rem) / 1 var(--pixel);
+  color: var(--accent);
+}
+
+.stat-label {
+  font-size: 0.92rem;
+  line-height: 1.35;
+  color: var(--muted);
+}
+
+.menu a.menu-cta {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+/* Outcome lines under an entry: a small pixel seed before each. */
+.points {
+  display: grid;
+  gap: 0.3rem;
+  margin-top: 0.75rem;
+  font-size: 0.94rem;
+  line-height: 1.45;
+}
+
+.points li {
+  position: relative;
+  padding-left: 1.1rem;
+}
+
+.points li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 6px;
+  height: 6px;
+  background: var(--leaf);
+}
+
+/* Case-study cards: raised plots with a hard pixel shadow. */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 19rem), 1fr));
+  gap: 1.5rem;
+  margin-top: 1.75rem;
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1.35rem 1.35rem 1.15rem;
+  background: var(--card);
+  border: 2px solid var(--card-edge);
+  box-shadow: 5px 5px 0 var(--card-edge);
+  transition: transform 0.15s steps(2), box-shadow 0.15s steps(2), border-color 0.15s steps(2);
+}
+
+.card.linked:hover,
+.card.linked:focus-within {
+  transform: translate(-3px, -3px);
+  border-color: var(--accent);
+  box-shadow: 8px 8px 0 color-mix(in srgb, var(--accent) 55%, transparent);
+}
+
+.card-head {
+  display: flex;
+  gap: 0.85rem;
+  align-items: flex-start;
+}
+
+.card h3 {
+  font: 600 1.3rem/1.2 var(--pixel);
+}
+
+.card h3 a {
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.card h3 a::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+
+.card .meta {
+  display: block;
+  margin-top: 0.2rem;
+  font: 0.85rem/1.3 var(--pixel);
+  color: var(--accent);
+}
+
+.card > p {
+  font-size: 0.98rem;
+  line-height: 1.6;
+}
+
+.card .points {
+  margin-top: 0;
+}
+
+.card-foot {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-top: auto;
+  padding-top: 0.5rem;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.tags li {
+  padding: 0.2rem 0.5rem;
+  font: 0.78rem/1.2 var(--pixel);
+  color: var(--muted);
+  border: 2px solid var(--card-edge);
+  background: var(--bg);
+}
+
+.card-more {
+  flex: none;
+  font: 600 0.85rem/1.2 var(--pixel);
+  color: var(--accent);
+}
+
+.card-more.private {
+  color: var(--muted);
+  font-weight: 400;
+}
+
+.card.linked:hover .plant-svg,
+.card.linked:focus-within .plant-svg {
+  animation: grow 0.5s steps(4);
+}
+
+/* The closing plot: one clear ask. */
+.contact {
+  position: relative;
+  margin-top: 5rem;
+  padding: clamp(1.75rem, 5vw, 3rem);
+  background: var(--card);
+  border: 2px solid var(--ink);
+  box-shadow: 8px 8px 0 var(--accent);
+}
+
+.contact h2 {
+  font: 600 clamp(1.7rem, 4.5vw, 2.6rem) / 1.1 var(--pixel);
+  max-width: 34rem;
+}
+
+.contact p {
+  margin-top: 1rem;
+  max-width: 40rem;
+  font-size: 1.1rem;
+}
+
+.contact .actions {
+  margin-top: 1.75rem;
+}
+
+@media (max-width: 48rem) {
+  .stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .stats li:nth-child(3) {
+    border-left: none;
+  }
+
+  .stats li:nth-child(n + 3) {
+    border-top: 2px dashed var(--card-edge);
+  }
+}
+
+@media (max-width: 36rem) {
+  .actions {
+    gap: 0.7rem;
+  }
+
+  .btn {
+    flex: 1 1 auto;
+    justify-content: center;
+  }
+
+  .contact {
+    margin-top: 3.5rem;
+    box-shadow: 5px 5px 0 var(--accent);
+  }
+
+  .contact .btn {
+    font-size: 0.9rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .status-dot,
+  .card.linked:hover .plant-svg {
+    animation: none;
+  }
+
+  .btn,
+  .card {
+    transition: none;
+  }
+}

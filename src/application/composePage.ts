@@ -5,6 +5,8 @@ export interface PageSection {
   letter: string;
   title: string;
   intro?: string;
+  layout: "garden" | "cards";
+  inMenu: boolean;
   entries: Entry[];
 }
 
@@ -25,11 +27,13 @@ const LETTERS = "abcdefghijklmnopqrstuvwxyz";
 export function composePage(source: ProfileSource): PageModel {
   const profile = source.load();
   return {
-    documentTitle: `${profile.name} · ${profile.tagline}`,
-    description: profile.intro[0] ?? profile.tagline,
+    documentTitle: `${profile.fullName} · ${profile.role}`,
+    description: profile.headline,
     profile,
     sections: profile.sections.map((section, i) => ({
       ...section,
+      layout: section.layout ?? "garden",
+      inMenu: section.inMenu ?? true,
       letter: LETTERS[i] ?? String(i + 1),
     })),
   };
