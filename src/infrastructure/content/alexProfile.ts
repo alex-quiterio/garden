@@ -7,19 +7,16 @@ const personalEmail = "alexandre@pm.me";
 export const alexProfile: Profile = {
   name: "alex quiterio",
   fullName: "Alex Quiterio",
-  role: "Staff Engineer · AI & Distributed Systems",
+  role: "Staff Engineer · Distributed Systems & AI",
   greeting: "ola! i'm alex.",
   tagline: "staff engineer, wondering",
-  headline:
-    "Staff engineer building software that runs physical operations, from a 10M-user marketplace to a climate-tech platform, and AI agents that remove toil, not judgement.",
+  headline: "Staff engineer in distributed systems and AI, for software that runs real-world operations.",
   place: "Amsterdam",
   timeZone: "Europe/Amsterdam",
   intro: [
-    "I'm a staff engineer at Seenons, building AI factories: agents and skills wired into real workflows, with the guardrails, review loops and tests that make AI-produced software something you can ship.",
-    "Before that I spent five years at Catawiki, helping break a marketplace serving 10M+ monthly users into team-owned services. I design event-driven systems that stay legible as they grow, and raise engineers who outgrow their roles.",
-    "To understand how systems hold under load, I build them from scratch: consensus protocols, Byzantine quorums, compilers, and a drone autopilot simulator.",
+    "At Seenons I own the core platform behind a circular economy for business waste, and build the agent pipelines that take a GitHub issue to a reviewed pull request. Before that I spent five years at Catawiki, helping break a marketplace with 10M+ monthly users into team-owned services.",
   ],
-  availability: "open to staff+ roles · AI, autonomy, distributed systems",
+  availability: "open to staff+ roles · distributed systems, AI, autonomy",
   actions: {
     primary: { label: "get in touch", url: `mailto:${personalEmail}?subject=Hello%20Alex` },
     secondary: [
@@ -28,12 +25,12 @@ export const alexProfile: Profile = {
     ],
   },
   stats: [
-    { value: "10M+", label: "monthly users on the Catawiki marketplace" },
-    { value: "500k+", label: "waste transactions a year on my event model" },
-    { value: "2,150+", label: "merged PRs, 2,800+ reviews at Seenons" },
+    { value: "10M+", label: "monthly users on a marketplace I helped split into services" },
+    { value: "15 min", label: "deploys, down from 2–4 hours" },
+    { value: "35%", label: "more efficient collections through multi-stream routing" },
     { value: "1 → 10+", label: "engineers, a team I helped build" },
   ],
-  facts: ["amsterdam · CET", "typescript · rust · python", "ai agents · consensus · autonomy"],
+  facts: ["amsterdam · CET", "typescript · rust · python", "distributed systems · ai engineering"],
   sections: [
     {
       id: "impact",
@@ -53,9 +50,9 @@ export const alexProfile: Profile = {
           points: ["cross-system dependencies cut by 50% at Catawiki", "collection efficiency up 35% with multi-stream routing", "deploys from 2–4 hours to 15 minutes"],
         },
         {
-          title: "autonomy and real-time control",
-          meta: "Rust · planning · simulation",
-          body: "Path planning, optic-flow navigation and collision prevention, simulated end to end. I like problems where software has to decide on its own, quickly and safely, with no human in the loop.",
+          title: "a pull toward autonomy",
+          meta: "personal work · Rust · simulation",
+          body: "On my own time I built beeline, a drone simulator with path planning, optic-flow navigation and collision prevention. It's where I'm heading: problems where software has to decide on its own, quickly and safely.",
           points: ["A* planning in 3D airspace", "PX4-style collision prevention", "deterministic simulation for testing"],
         },
         {
