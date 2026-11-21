@@ -6,7 +6,6 @@ const personalEmail = "alexandre@pm.me";
 
 export const alexProfile: Profile = {
   name: "alex quiterio",
-  fullName: "Alex Quiterio",
   role: "Staff Engineer · Distributed Systems & AI",
   greeting: "ola! i'm alex.",
   tagline: "staff engineer, wondering",
@@ -18,7 +17,7 @@ export const alexProfile: Profile = {
   ],
   availability: "open to staff+ roles · distributed systems, AI, autonomy",
   actions: {
-    primary: { label: "get in touch", url: `mailto:${personalEmail}?subject=Hello%20Alex` },
+    primary: { label: "get in touch", url: `mailto:${personalEmail}?subject=hello%20alex` },
     secondary: [
       { label: "selected work", url: "#work" },
       { label: "linkedin", url: "https://www.linkedin.com/in/alexandrequiterio/" },
@@ -293,7 +292,7 @@ export const alexProfile: Profile = {
   contact: {
     title: "let's build something that holds.",
     body: "If your team works on AI systems, autonomy or distributed infrastructure and needs someone who can take an idea from paper to production, I'd like to hear about it.",
-    action: { label: personalEmail, url: `mailto:${personalEmail}?subject=Hello%20Alex` },
+    action: { label: personalEmail, url: `mailto:${personalEmail}?subject=hello%20alex` },
   },
   links: [
     { label: "linkedin", url: "https://www.linkedin.com/in/alexandrequiterio/" },

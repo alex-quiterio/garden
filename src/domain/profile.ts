@@ -32,8 +32,6 @@ export interface Stat {
 
 export interface Profile {
   name: string;
-  /** Proper-cased name for titles, metadata and search results. */
-  fullName: string;
   role: string;
   greeting: string;
   tagline: string;

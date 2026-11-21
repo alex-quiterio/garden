@@ -79,7 +79,7 @@ export function renderPage(page: PageModel, opts: { timeZone: string }): string 
   const jsonLd = JSON.stringify({
     "@context": "https://schema.org",
     "@type": "Person",
-    name: profile.fullName,
+    name: profile.name,
     jobTitle: profile.role,
     description: profile.headline,
     address: { "@type": "PostalAddress", addressLocality: profile.place },
@@ -93,7 +93,7 @@ export function renderPage(page: PageModel, opts: { timeZone: string }): string 
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 <title>${escapeHtml(page.documentTitle)}</title>
 <meta name="description" content="${escapeHtml(page.description)}" />
-<meta name="author" content="${escapeHtml(profile.fullName)}" />
+<meta name="author" content="${escapeHtml(profile.name)}" />
 <meta property="og:type" content="profile" />
 <meta property="og:title" content="${escapeHtml(page.documentTitle)}" />
 <meta property="og:description" content="${escapeHtml(page.description)}" />

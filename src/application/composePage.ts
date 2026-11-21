@@ -27,7 +27,7 @@ const LETTERS = "abcdefghijklmnopqrstuvwxyz";
 export function composePage(source: ProfileSource): PageModel {
   const profile = source.load();
   return {
-    documentTitle: `${profile.fullName} · ${profile.role}`,
+    documentTitle: `${profile.name} · ${profile.role}`,
     description: profile.headline,
     profile,
     sections: profile.sections.map((section, i) => ({
